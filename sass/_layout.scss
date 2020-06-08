@@ -1,65 +1,99 @@
 .container {
-    max-width: 120rem;
-    margin: 8rem auto;
-    background-color: var(--color-grey-light-1);
-    box-shadow: var(--shadow-dark);
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-1);
+  box-shadow: var(--shadow-dark);
 
-    min-height: 50rem;
+  min-height: 50rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    //removes pink bg
+    margin: 0;
+    max-width: 100%; //prevents the side from overflowing
+    width: 100%;
+  }
 }
 
 .header {
-    height: 7rem;
-    background-color: #fff;
-    border-bottom: var(--line);
-    font-size: 1.4rem;
+  height: 7rem;
+  background-color: #fff;
+  border-bottom: var(--line);
+  font-size: 1.4rem;
 
-    display: flex;
-    justify-content: space-between; //X direction
-    align-items: center; //Y direction
+  display: flex;
+  justify-content: space-between; //X direction
+  align-items: center; //Y direction
+
+  @media only screen and (max-width: $bp-smallest) {
+      flex-wrap: wrap; //will put search bar in new row
+      align-content: space-around;
+      height: 11rem;
+    }
+
 }
 
 .content {
-    display: flex;
+  display: flex;
+
+  @media only screen and (max-width: $bp-medium) {
+    // align-content: col;;
+    flex-direction: column; //puts nav on top
+  }
 }
 
 .sidebar {
-    background-color: var(--color-grey-dark-1);
-    flex: 0 0 18%; //grow, shrink, base (width)
+  background-color: var(--color-grey-dark-1);
+  flex: 0 0 18%; //grow, shrink, base (width)
 
-    display: flex;
-    flex-direction: column; //Changed X axis direction to top to bottom - so we can use justify content - default is row
-    justify-content: space-between; 
-
+  display: flex;
+  flex-direction: column; //Changed X axis direction to top to bottom - so we can use justify content - default is row
+  justify-content: space-between;
 }
 
 .hotel-view {
-    background-color: #fff;
-    flex: 1;
+  background-color: #fff;
+  flex: 1;
 }
 
 .detail {
-    display: flex;
-    padding: 4.5rem;
-    background-color: var(--color-grey-light-1);
-    border-bottom: var(--line);
-    font-size: 1.4rem;
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--line);
+  font-size: 1.4rem;
 
+  @media only screen and (max-width: $bp-medium) {
+    padding: 3rem; //no longer 4.5
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column; 
+  }
 }
 
 .description {
-    background-color: #fff;
-    flex: 0 0 60%;
-    margin-right: 4.5rem;
-    box-shadow: var(--shadow-light);
-    padding: 3rem;
+  background-color: #fff;
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
 
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+  
 }
 
 .user-reviews {
-    flex: 1;
+  flex: 1;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
